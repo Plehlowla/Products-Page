@@ -31,6 +31,14 @@ const displayProduct = (product) => {
   const { url: img } = image[0];
   console.log(company, price, title);
   const formatPrice = price / 100;
+
+  // colors
+  const colorsList = colors
+    .map((color) => {
+      return `<span class="product-color" style="background: ${color}"></span>`;
+    })
+    .join("");
+
   productDOM.innerHTML = `<div class="product-wrapper">
         <img src="${img}" class="img" alt="${title}" />
         <div class="product-info">
@@ -38,8 +46,7 @@ const displayProduct = (product) => {
           <h5>${company}</h5>
           <span>$${price / 100}</span>
           <div class="colors">
-            <span class="product-color"></span>
-            <span class="product-color" style="background: red"></span>
+          ${colorsList}
           </div>
         </div>
         <p>
