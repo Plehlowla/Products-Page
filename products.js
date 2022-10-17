@@ -33,6 +33,7 @@ const displayProduct = (product) => {
   const formatPrice = price / 100;
 
   // colors
+  // console.log(colors);
   const colorsList = colors
     .map((color) => {
       return `<span class="product-color" style="background: ${color}"></span>`;
